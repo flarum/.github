@@ -26,7 +26,7 @@ IMPORTANT: We applaud pull requests, they excite us every single time. As we hav
 - [ ] Frontend changes: tested on a local Flarum installation.
 - [ ] Backend changes: tests are green (run `composer test`).
 - [ ] Core developer confirmed locally this works as intended.
-- [ ] Tests have been added, or are not appropriate here
+- [ ] Tests have been added, or are not appropriate here.
 
 **Required changes:**
 
