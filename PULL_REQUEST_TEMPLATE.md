@@ -13,10 +13,20 @@ IMPORTANT: We applaud pull requests, they excite us every single time. As we hav
 **Screenshot**
 <!-- include an image of the most relevant user-facing change, if any -->
 
+
+**Necessity**
+
+- [ ] Has the problem that is being solved here been clearly explained?
+- [ ] If applicable, have various options for solving this problem been considered?
+- [ ] For core PRs, does this need to be in core, or could it be in an extension?
+- [ ] Are we willing to maintain this for years / potentially forever?
+
 **Confirmed**
 
 - [ ] Frontend changes: tested on a local Flarum installation.
 - [ ] Backend changes: tests are green (run `composer test`).
+- [ ] Core developer confirmed locally this works as intended.
+- [ ] Tests have been added, or are not appropriate here.
 
 **Required changes:**
 
