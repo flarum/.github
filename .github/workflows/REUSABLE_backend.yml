@@ -55,6 +55,8 @@ jobs:
 
     name: 'PHP ${{ matrix.php }} / ${{ matrix.db }} ${{ matrix.prefixStr }}'
 
+    if: inputs.enable_backend_testing
+
     steps:
       - uses: actions/checkout@master
 
