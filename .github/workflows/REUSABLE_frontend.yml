@@ -35,11 +35,11 @@ on:
         required: false
         default: 16
 
-        commit_sha:
-          description: The commit SHA to use for the workflow's bundlewatch step.
-          type: string
-          required: false
-          default: 'HEAD'
+      commit_sha:
+        description: The commit SHA to use for the workflow's bundlewatch step.
+        type: string
+        required: false
+        default: 'HEAD'
     secrets:
       bundlewatch_github_token:
         description: The GitHub token to use for Bundlewatch.
