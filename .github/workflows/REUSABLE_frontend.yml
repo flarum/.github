@@ -46,7 +46,7 @@ jobs:
   bundlewatch:
     name: Bundlewatch
     runs-on: ubuntu-latest
-    if: inputs.enable_bundlewatch && secrets.bundlewatch_github_token != ''
+    if: inputs.enable_bundlewatch
 
     steps:
       - name: Check out code
