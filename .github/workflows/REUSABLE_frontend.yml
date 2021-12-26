@@ -163,6 +163,9 @@ jobs:
           cache: "yarn"
           cache-dependency-path: ${{ env.cache_dependency_path }}
 
+      - name: Testing
+        run: echo "${{ github.ref}} ${{ inputs.main_git_branch }} ${{ github.event_name}}"
+
       # Our action will install npm/yarn, cd into `${{ inputs.frontend_directory }}`, build dist JS and typings,
       # then commit and upload any changes iff we are on the main branch and have just pushed.
       - name: Build production JS
