@@ -37,7 +37,6 @@ on:
     secrets:
       bundlewatch_github_token:
         description: The GitHub token to use for Bundlewatch.
-        type: string
         required: false        
 
 env:
