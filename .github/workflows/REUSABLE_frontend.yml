@@ -149,7 +149,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    if: "!contains(needs.*.result, 'failed') && !contains(needs.*.result, 'cancelled')"
+    if: "always() && !contains(needs.*.result, 'failed') && !contains(needs.*.result, 'cancelled')"
     needs: [bundlewatch, prettier, typecheck, type-coverage]
 
     steps:
