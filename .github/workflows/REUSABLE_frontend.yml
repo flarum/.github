@@ -65,6 +65,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           build_script: build
           package_manager: yarn
+          js_path: ${{ inputs.frontend_directory }}
           do_not_commit: true
 
       - name: Check bundle size change
@@ -172,4 +173,5 @@ jobs:
           build_script: build
           package_manager: yarn
           typings_script: build-typings
+          js_path: ${{ inputs.frontend_directory }}
           do_not_commit: ${{ github.ref != format('refs/heads/{0}', inputs.main_git_branch) || github.event_name != 'push' }}
