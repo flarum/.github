@@ -180,7 +180,7 @@ jobs:
       # Our action will install npm/yarn, cd into `${{ inputs.frontend_directory }}`, build dist JS and typings,
       # then commit and upload any changes iff we are on the main branch and have just pushed.
       - name: Build production JS
-        if: ! inputs.enable_typescript
+        if: "! inputs.enable_typescript"
         uses: flarum/action-build@2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
