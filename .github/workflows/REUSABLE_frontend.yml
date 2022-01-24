@@ -51,7 +51,7 @@ on:
         required: false        
 
 env:
-  cache_dependency_path: ${{ format(inputs.js_package_manager === 'yarn' && '{0}/yarn.lock' || '{0}/package-lock.json', inputs.frontend_directory) }}
+  cache_dependency_path: ${{ format(inputs.js_package_manager == 'yarn' && '{0}/yarn.lock' || '{0}/package-lock.json', inputs.frontend_directory) }}
 
 jobs:
   bundlewatch:
