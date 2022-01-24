@@ -20,7 +20,7 @@ on:
         required: false
         
       backend_directory:
-        description: The directory of the project where backend code is located. This should contain a `composer.json` file, and is generally the root directory of the repo..
+        description: The directory of the project where backend code is located. This should contain a `composer.json` file, and is generally the root directory of the repo.
         type: string
         required: false
         default: '.'
