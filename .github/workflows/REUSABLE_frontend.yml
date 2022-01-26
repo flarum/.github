@@ -19,6 +19,11 @@ on:
         default: true
         required: false
         
+      backend_directory:
+        description: The directory of the project where backend code is located. This should contain a `composer.json` file, and is generally the root directory of the repo.
+        type: string
+        required: false
+        default: '.'
       frontend_directory:
         description: The directory of the project where frontend code is located. This should contain a `package.json` file.
         type: string
@@ -34,13 +39,19 @@ on:
         type: number
         required: false
         default: 16
+        
+      js_package_manager:
+        description: "Enable TypeScript?"
+        type: string
+        default: yarn
+        required: false
     secrets:
       bundlewatch_github_token:
         description: The GitHub token to use for Bundlewatch.
         required: false        
 
 env:
-  cache_dependency_path: ${{ format('{0}/yarn.lock', inputs.frontend_directory) }}
+  cache_dependency_path: ${{ format(inputs.js_package_manager == 'yarn' && '{0}/yarn.lock' || '{0}/package-lock.json', inputs.frontend_directory) }}
 
 jobs:
   bundlewatch:
@@ -56,7 +67,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ inputs.node_version }}
-          cache: "yarn"
+          cache: ${{ inputs.js_package_manager }}
           cache-dependency-path: ${{ env.cache_dependency_path }}
 
       - name: Build production assets
@@ -64,7 +75,7 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           build_script: build
-          package_manager: yarn
+          package_manager: ${{ inputs.js_package_manager }}
           js_path: ${{ inputs.frontend_directory }}
           do_not_commit: true
 
@@ -88,15 +99,15 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ inputs.node_version }}
-          cache: "yarn"
+          cache: ${{ inputs.js_package_manager }}
           cache-dependency-path: ${{ env.cache_dependency_path }}
 
       - name: Install JS dependencies
-        run: yarn install --immutable
+        run: ${{ inputs.js_package_manager }} run ci
         working-directory: ${{ inputs.frontend_directory }}
 
       - name: Check JS formatting
-        run: yarn run format-check
+        run: ${{ inputs.js_package_manager }} run format-check
         working-directory: ${{ inputs.frontend_directory }}
 
   typecheck:
@@ -112,15 +123,27 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ inputs.node_version }}
-          cache: "yarn"
+          cache: ${{ inputs.js_package_manager }}
           cache-dependency-path: ${{ env.cache_dependency_path }}
+      
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: curl, dom, gd, json, mbstring, openssl, pdo_mysql, tokenizer, zip
+          tools: composer:v2
+
+      # Needed since tsconfig draws typings from vendor folder.
+      - name: Install Composer dependencies
+        run: composer install
+        working-directory: ${{ inputs.backend_directory }}
 
       - name: Install JS dependencies
-        run: yarn --frozen-lockfile
+        run: ${{ inputs.js_package_manager }} run ci
         working-directory: ${{ inputs.frontend_directory }}
 
       - name: Typecheck
-        run: yarn run check-typings
+        run: ${{ inputs.js_package_manager }} run check-typings
         working-directory: ${{ inputs.frontend_directory }}
 
   type-coverage:
@@ -136,15 +159,15 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ inputs.node_version }}
-          cache: "yarn"
+          cache: ${{ inputs.js_package_manager }}
           cache-dependency-path: ${{ env.cache_dependency_path }}
 
       - name: Install JS dependencies
-        run: yarn --frozen-lockfile
+        run: ${{ inputs.js_package_manager }} run ci
         working-directory: ${{ inputs.frontend_directory }}
 
       - name: Check type coverage
-        run: yarn run check-typings-coverage
+        run: ${{ inputs.js_package_manager }} run check-typings-coverage
         working-directory: ${{ inputs.frontend_directory }}
 
   build:
@@ -161,7 +184,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ inputs.node_version }}
-          cache: "yarn"
+          cache: ${{ inputs.js_package_manager }}
           cache-dependency-path: ${{ env.cache_dependency_path }}
 
       # Our action will install npm/yarn, cd into `${{ inputs.frontend_directory }}`, build dist JS and typings,
@@ -172,7 +195,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           build_script: build
-          package_manager: yarn
+          package_manager: ${{ inputs.js_package_manager }}
           typings_script: build-typings
           js_path: ${{ inputs.frontend_directory }}
           do_not_commit: ${{ github.ref != format('refs/heads/{0}', inputs.main_git_branch) || github.event_name != 'push' }}
@@ -185,6 +208,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           build_script: build
-          package_manager: yarn
+          package_manager: ${{ inputs.js_package_manager }}
           js_path: ${{ inputs.frontend_directory }}
           do_not_commit: ${{ github.ref != format('refs/heads/{0}', inputs.main_git_branch) || github.event_name != 'push' }}

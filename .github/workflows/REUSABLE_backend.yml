@@ -10,10 +10,24 @@ on:
         required: false
         
       backend_directory:
-        description: The directory of the project where backend code is located. This should contain a `composer.json` file, and is generally the root directory of the repo..
+        description: The directory of the project where backend code is located. This should contain a `composer.json` file, and is generally the root directory of the repo.
         type: string
         required: false
         default: '.'
+        
+      php_versions:
+        description: Versions of PHP to test with. Should be array of strings encoded as JSON array
+        type: string
+        required: false
+        default: '["7.4", "8.0", "8.1"]'
+      db_versions:
+        description: Versions of databases to test with. Should be array of strings encoded as JSON array
+        type: string
+        required: false
+        default: '["mysql:5.7", "mariadb"]'
+        
+env:
+  FLARUM_TEST_TMP_DIR_LOCAL: tests/integration/tmp
 
 jobs:
   test:
@@ -21,8 +35,8 @@ jobs:
 
     strategy:
       matrix:
-        php: ['7.3', '7.4', '8.0', '8.1']
-        service: ['mysql:5.7', mariadb]
+        php: ${{ fromJSON(inputs.php_versions) }}
+        service: ${{ fromJSON(inputs.db_versions) }}
         prefix: ['', flarum_]
 
         include:
@@ -34,12 +48,6 @@ jobs:
             prefixStr: (prefix)
 
         exclude:
-          - php: 7.3
-            service: 'mysql:5.7'
-            prefix: flarum_
-          - php: 7.3
-            service: mariadb
-            prefix: flarum_
           - php: 8.0
             service: 'mysql:5.7'
             prefix: flarum_
