@@ -129,7 +129,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php }}
+          php-version: '8.0'
           extensions: curl, dom, gd, json, mbstring, openssl, pdo_mysql, tokenizer, zip
           tools: composer:v2
 
