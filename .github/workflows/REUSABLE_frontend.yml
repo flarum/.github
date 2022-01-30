@@ -51,6 +51,7 @@ on:
         required: false        
 
 env:
+  ci_script: ${{ inputs.js_package_manager == 'yarn' && 'yarn install --immutable --immutable-cache' || 'npm ci' }}
   cache_dependency_path: ${{ format(inputs.js_package_manager == 'yarn' && '{0}/yarn.lock' || '{0}/package-lock.json', inputs.frontend_directory) }}
 
 jobs:
@@ -103,7 +104,7 @@ jobs:
           cache-dependency-path: ${{ env.cache_dependency_path }}
 
       - name: Install JS dependencies
-        run: ${{ inputs.js_package_manager }} run ci
+        run: ${{ env.ci_script }}
         working-directory: ${{ inputs.frontend_directory }}
 
       - name: Check JS formatting
@@ -139,7 +140,7 @@ jobs:
         working-directory: ${{ inputs.backend_directory }}
 
       - name: Install JS dependencies
-        run: ${{ inputs.js_package_manager }} run ci
+        run: ${{ env.ci_script }}
         working-directory: ${{ inputs.frontend_directory }}
 
       - name: Typecheck
@@ -163,7 +164,7 @@ jobs:
           cache-dependency-path: ${{ env.cache_dependency_path }}
 
       - name: Install JS dependencies
-        run: ${{ inputs.js_package_manager }} run ci
+        run: ${{ env.ci_script }}
         working-directory: ${{ inputs.frontend_directory }}
 
       - name: Check type coverage
