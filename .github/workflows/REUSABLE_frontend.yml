@@ -51,7 +51,7 @@ on:
         required: false        
 
 env:
-  ci_script: ${{ inputs.js_package_manager == 'yarn' && 'yarn install --immutable --immutable-cache' || 'npm ci' }}
+  ci_script: ${{ inputs.js_package_manager == 'yarn' && 'yarn install --immutable' || 'npm ci' }}
   cache_dependency_path: ${{ format(inputs.js_package_manager == 'yarn' && '{0}/yarn.lock' || '{0}/package-lock.json', inputs.frontend_directory) }}
 
 jobs:
