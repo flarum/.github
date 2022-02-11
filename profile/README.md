@@ -6,9 +6,9 @@ Flarum is a technically excellent, open and extensible discussion platform.
 
 Flarum is scalable, performant and beautiful appealing to small to enterprise communities, like:
 
-<a href="https://community.giffgaff.com" target="_blank"><img src="https://www.giffgaff.design/brand/logo/gg-logo.png" height="100" ></a>
-<a href="https://community.upc.ch" target="_blank"><img src="https://community.upc.ch/assets/extensions/glowingblue-upc/upc_logo.png" height="100" ></a>
-<a href="https://together.bunq.com/" target="_blank"><img src="https://github.com/bunq.png" height="100" ></a>
+<a href="https://community.giffgaff.com" target="_blank"><img src="https://www.giffgaff.design/brand/logo/gg-logo.png" height="50" ></a>
+<a href="https://community.upc.ch" target="_blank"><img src="https://community.upc.ch/assets/extensions/glowingblue-upc/upc_logo.png" height="50" ></a>
+<a href="https://together.bunq.com/" target="_blank"><img src="https://github.com/bunq.png" height="50" ></a>
 
 ## Discover more
  
