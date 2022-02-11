@@ -1,4 +1,4 @@
-<p align="center"><a href="https://flarum.org" target="_blank"><img src="https://raw.githubusercontent.com/flarum/flarum.org/blob/master/public/assets/img/logo.png" width="400"></a></p>
+<p align="center"><a href="https://flarum.org" target="_blank"><img src="https://flarum.org/assets/img/logo.png" width="400"></a></p>
 
 ## About Flarum, forums made simple
 
