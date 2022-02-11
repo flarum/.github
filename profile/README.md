@@ -4,12 +4,11 @@
 
 Flarum is a technically excellent, open and extensible discussion platform. 
 
-Its key features include:
+Flarum is scalable, performant and beautiful appealing to small to enterprise communities, like:
 
-- Fresh, user friendly and mobile-first design.
-- Extensibility allowing for full feature and design customization.
-
-Flarum is scalable, performant and beautiful appealing to small to enterprise communities.
+<a href="https://community.giffgaff.com" target="_blank"><img src="https://www.giffgaff.design/brand/logo/gg-logo.png" height="100" ></a>
+<a href="https://community.upc.ch" target="_blank"><img src="https://community.upc.ch/assets/extensions/glowingblue-upc/upc_logo.png" height="100" ></a>
+<a href="https://together.bunq.com/" target="_blank"><img src="https://github.com/bunq.png" height="100" ></a>
 
 ## Discover more
  
