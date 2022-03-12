@@ -27,6 +27,7 @@ on:
         default: '["mysql:5.7", "mariadb"]'
         
 env:
+  COMPOSER_ROOT_VERSION: dev-main
   FLARUM_TEST_TMP_DIR_LOCAL: tests/integration/tmp
 
 jobs:
