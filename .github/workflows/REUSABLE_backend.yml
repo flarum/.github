@@ -30,7 +30,7 @@ on:
         description: PHP ini values
         type: string
         required: false
-        default: display_errors=E_ALL
+        default: error_reporting=E_ALL
 
 env:
   COMPOSER_ROOT_VERSION: dev-main
