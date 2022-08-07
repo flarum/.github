@@ -16,7 +16,7 @@ Flarum is scalable, performant and beautiful appealing to small to enterprise co
 ## Discover more
  
 - 🏡 You can find our homepage at [Flarum.org](https://flarum.org), with the [user](https://docs.flarum.org), [developer](https://docs.flarum.org/extend) and [internal](https://docs.flarum.org/internal) documentation at [docs.flarum.org](https://docs.flarum.org).
-- 👩‍💻 The Flarum codebase and issue tracker lives at [flarum/core](https://github.com/flarum/core) and soon migrates to the [flarum/framework](https://github.com/flarum/framework) repository.
+- 👩‍💻 The Flarum codebase and issue tracker lives in the [flarum/framework](https://github.com/flarum/framework) repository.
 - 🤝 The official community at [discuss.flarum.org](https://discuss.flarum.org) is warm and welcoming. Aside from the support requests, it contains vibrant discussions related to community management, extension development and real life musings.
 - 😍 Other people have tried Flarum! That's why we are rated [#1 "best web forum software" on Slant](https://www.slant.co/topics/898/~best-web-forum-software-packages)!
 - 🚲 Want to give Flarum a spin? Try the [demo](https://demo.flarum.site) (reset daily) or spin up your own community at [FreeFlarum](https://freeflarum.com).
