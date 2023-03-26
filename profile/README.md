@@ -5,7 +5,7 @@
 
 Flarum is a technically excellent, open and extensible discussion platform. 
 
-Flarum is scalable, performant and beautiful appealing to small to enterprise communities, like:
+Flarum is scalable, performant and beautiful. Appealing to small to enterprise communities, like:
 
 <p align="center">
 <a href="https://community.giffgaff.com" target="_blank"><img src="https://www.giffgaff.design/brand/logo/gg-logo.png" height="50" ></a>
