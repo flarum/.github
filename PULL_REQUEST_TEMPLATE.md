@@ -13,6 +13,8 @@ IMPORTANT: We applaud pull requests, they excite us every single time. As we hav
 **Screenshot**
 <!-- include an image of the most relevant user-facing change, if any -->
 
+**QA**
+<!-- include a list of checks that we can go through during QA to confirm this feature/fix still works as intended -->
 
 **Necessity**
 
