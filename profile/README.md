@@ -9,7 +9,7 @@ Flarum is scalable, performant and beautiful. Appealing to small to enterprise c
 
 <p align="center">
 <a href="https://community.giffgaff.com" target="_blank"><img src="https://www.giffgaff.design/brand/logo/gg-logo.png" height="50" ></a>
-<a href="https://community.upc.ch" target="_blank"><img src="https://community.upc.ch/assets/extensions/glowingblue-upc/upc_logo.png" height="50" ></a>
+<a href="https://community.sunrise.ch" target="_blank"><img src="https://community.sunrise.ch/assets/extensions/glowingblue-sunrise/logos/HorizontalSunriseRed.svg" height="50" ></a>
 <a href="https://together.bunq.com/" target="_blank"><img src="https://github.com/bunq.png" height="50" ></a>
 </p>
 
