@@ -8,7 +8,7 @@ Due to the nature of our project - being open source - we have decided to patch 
 
 ## How to disclose
 
-Please use [our website](https://flarum.org/contact/security) for security issues that affect our project. If you believe you have found a vulnerability, please disclose it via our website. You can also disclose security issues by mailing security@flarum.org.
+Please use [our website](https://flarum.org/foundation/contact) for security issues that affect our project. If you believe you have found a vulnerability, please disclose it via our website. You can also disclose security issues by mailing security@flarum.org.
 
 ## What we do
 
