@@ -8,4 +8,4 @@ Active development is on the **2.x** line — target `2.x` for bug fixes, featur
 
 **1.8.x** is in maintenance only mode until it reaches end of life on **31 December 2026**. Until then only critical security fixes and critical bug fixes are considered for it; pull requests opened against `1.x` for anything else will be closed, including ones that would previously have been accepted.
 
-If you believe a change is critical enough to belong on 1.x too, open it against `2.x` first and say so in the description — we will decide whether to backport it.
+If you believe you have found something critical enough for 1.8.x, open an issue first so we can agree it qualifies before you write the code.
