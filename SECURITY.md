@@ -1,10 +1,16 @@
 # Security Policy
 
-## 
-
 ## Versions
 
-Due to the nature of our project - being open source - we have decided to patch only the latest major release (currently v1.x) for security vulnerabilities.
+| Line | Status | Supported until |
+| --- | --- | --- |
+| **2.x** | Active development. All fixes land here first. | — |
+| **1.8.x** | Maintenance only — critical security and critical bug fixes. | **31 December 2026** |
+| 1.7 and older | Unsupported. | — |
+
+After 31 December 2026 the 1.x line reaches end of life and will receive no further releases, including security fixes.
+
+Nothing other than critical fixes is backported to 1.8.x, and there are no further feature releases planned for that line. If you are running 1.x, you can upgrade to 2.x today — see the [upgrade guide](https://docs.flarum.org/2.x/update).
 
 ## How to disclose
 
